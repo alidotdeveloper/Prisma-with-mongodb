@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 async function main() {
 
 
- // store data
+    // store data
     
     // const user = await prisma.user.createMany({
     //     data: [{
@@ -30,7 +30,7 @@ async function main() {
     // })
     // console.log(posts)
 
-// find data
+    // find data
     // const posts = await prisma.post.findMany({
     //     where: {
     //         author: {
@@ -43,18 +43,31 @@ async function main() {
     // console.log(posts);
  
 
-//update data
-    const user = await prisma.user.update({
-        where: {
-            id:"64c78b707e5004d000fce0a2",
-             name:"ali"
-        },
-        data: {
-           name:"aliee"
-       }
+    //update data
+    //     const user = await prisma.user.update({
+    //         where: {
+    //             id:"64c78b707e5004d000fce0a2",
+    //              name:"ali"
+    //         },
+    //         data: {
+    //            name:"aliee"
+    //        }
 
-    }) 
-    console.log(user)
+    //     })
+    //     console.log(user)
+    // }
+
+    
+    // delet data
+    const postdel = await prisma.post.delete({
+        where: {
+            id:"64c78bf184f27fd2ab492780",
+          title:"this is my first post title"
+        }
+
+    })
+    console.log(postdel)
+
 }
 
 main()
